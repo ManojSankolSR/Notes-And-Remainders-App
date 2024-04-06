@@ -9,7 +9,8 @@ import RemainderComponent from './components/RemainderComponent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import { Masonry, TabContext, TabList, TabPanel } from '@mui/lab';
-import { Tab,Paper } from '@mui/material';
+import { Tab,Paper,useMediaQuery, } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 
 
@@ -21,6 +22,8 @@ const HomeScreen = () => {
   const remaindersContext = useContext(RemaindersContext);
   const [tabNo, changeTab] = useState("1");
   const loading = useContext(LoadingContext);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('xs'));
 
 
   const handleChange = (event, newValue) => {
@@ -51,7 +54,7 @@ const HomeScreen = () => {
             <Tab label="Remainders" value="2" />
 
           </TabList>
-          <TabPanel value="1"  >
+          <TabPanel value="1" sx={{paddingY: matches ? 2 : 3,paddingX: matches ? 0 : 3 }} >
       
           {
             notesContext.Notes.length > 0 ?
@@ -67,7 +70,7 @@ const HomeScreen = () => {
             }
             
           </TabPanel>
-          <TabPanel value="2">
+          <TabPanel value="2" sx={{paddingY: matches ? 2 : 3,paddingX: matches ? 0 : 3 }}>
             {
               remaindersContext.Remainders.length > 0 ?
               <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} spacing={2} >
