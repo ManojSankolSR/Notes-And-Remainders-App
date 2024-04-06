@@ -10,10 +10,9 @@ import { useTheme } from '@emotion/react';
 
 
 const CustomButton=({onclick,varient,icon,label,loading,fullWidth,disabled})=>{
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('sm'));
+   
     return (
-        <Button fullWidth={fullWidth} variant={varient} onClick={onclick} disabled={disabled} startIcon={icon} size= {matches ? 'small':'medium'} >
+        <Button fullWidth={fullWidth} variant={varient} onClick={onclick} disabled={disabled} startIcon={icon}  >
                 {
                 loading ?  <CircularProgress size={23} value={true} variant="indeterminate" sx={{
                     color:'black',
