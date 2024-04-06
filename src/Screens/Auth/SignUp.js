@@ -13,8 +13,6 @@ const SignUp = () => {
     const [password,updatePassword]=useState(null);
     const [CNFpassword,updateCNFPassword]=useState(null);
     const [loading,setLoading]=useState(false);
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
     const navigate=useNavigate();
 
@@ -129,23 +127,23 @@ const SignUp = () => {
                 </div>
                
                 <br />
-                <TextField  size= {matches ? 'small':'medium'} fullWidth={true} onChange={handelUserNameChange} label={'UserName'} inputMode='text' value={username}/>
+                <TextField   fullWidth={true} onChange={handelUserNameChange} label={'UserName'} inputMode='text' value={username}/>
                 <br />
                 <br />
-                <TextField size= {matches ? 'small':'medium'} fullWidth={true} onChange={handelEmailChange} label={'Email'} inputMode='email' value={email}/>
+                <TextField  fullWidth={true} onChange={handelEmailChange} label={'Email'} inputMode='email' value={email}/>
                 <br />
                 <br />
-                <TextField size= {matches ? 'small':'medium'} fullWidth={true} onChange={handelPasswordChange} label={'Password'} type='password' value={password}  />
+                <TextField  fullWidth={true} onChange={handelPasswordChange} label={'Password'} type='password' value={password}  />
                 <br />
                 <br />
-                <TextField size= {matches ? 'small':'medium'} fullWidth={true} onChange={handelCNFPasswordChange} label={'Conform Password'} type='password' value={CNFpassword} />
+                <TextField  fullWidth={true} onChange={handelCNFPasswordChange} label={'Conform Password'} type='password' value={CNFpassword} />
 
             </CardContent>
             <CardActions  >
-                <Button size= {matches ? 'small':'medium'} variant='outlined' disabled={loading} >
+                <Button  variant='outlined' disabled={loading} >
                     Cancel
                 </Button>
-                <Button size= {matches ? 'small':'medium'} variant='contained' onClick={handelSignUp} disabled={loading} >
+                <Button  variant='contained' onClick={handelSignUp} disabled={loading} >
                 {
                 loading ?  <CircularProgress size={23} value={true} variant="indeterminate" sx={{
                     color:'black',
@@ -155,13 +153,13 @@ const SignUp = () => {
                 </Button>
             </CardActions>
             <CardActions  >
-                <Button size= {matches ? 'small':'medium'}  onClick={handleGoogleSignIn} fullWidth={true} startIcon={<FcGoogle />} variant='outlined' disabled={loading} >
+                <Button   onClick={handleGoogleSignIn} fullWidth={true} startIcon={<FcGoogle />} variant='outlined' disabled={loading} >
                     Google
                 </Button>
                 
             </CardActions>
             <CardActions>
-            <Button size= {matches ? 'small':'medium'} variant='contained'  disabled={loading}  fullWidth={true} onClick={()=>navigate('/')} >
+            <Button  variant='contained'  disabled={loading}  fullWidth={true} onClick={()=>navigate('/')} >
                Log In
             </Button>
             </CardActions>

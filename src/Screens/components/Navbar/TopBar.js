@@ -48,40 +48,42 @@ const TopBar = ({ pageTitle }) => {
   };
   return (
     <div className='TopBar'>
-      <NotesAddDialogComponent isRemainder={isRemainder} isDialogOpen={isAddNotesOpen} openDialog={openAddNotesDialog} />
-      <NavBarForSmallScreens isDialogOpen={isDialogOpen} openDialog={openDialog} />
       <SpeedDial   hidden={matches} 
+      
 
-        ariaLabel="SpeedDial basic example"
-        sx={{ position: 'absolute', bottom: 16, right: 16 }}
-        icon={<IoAdd />}
-      >
-   
-          <SpeedDialAction
-           onClick={()=>{
-            setIsRemainder(false);
+      ariaLabel="SpeedDial basic example"
+      sx={{ position: 'fixed', bottom: 16, right: 16 }}
+      icon={<IoAdd />}
+    >
+ 
+        <SpeedDialAction
+         onClick={()=>{
+          setIsRemainder(false);
+          openAddNotesDialog(true);
+          
+
+        }}
+          tooltipOpen={true}
+          key={"notes"}
+          icon={<FaRegNoteSticky />}
+          tooltipTitle={'Notes'}
+        />
+        <SpeedDialAction
+          tooltipOpen={true}
+          onClick={()=>{
+            setIsRemainder(true);
             openAddNotesDialog(true);
-            
 
           }}
-            tooltipOpen={true}
-            key={"notes"}
-            icon={<FaRegNoteSticky />}
-            tooltipTitle={'Notes'}
-          />
-          <SpeedDialAction
-            tooltipOpen={true}
-            onClick={()=>{
-              setIsRemainder(true);
-              openAddNotesDialog(true);
-
-            }}
-            key={"remainders"}
-            icon={<LuAlarmClock />}
-            tooltipTitle={'Remainders'}
-          />
-       
-      </SpeedDial>
+          key={"remainders"}
+          icon={<LuAlarmClock />}
+          tooltipTitle={'Remainders'}
+        />
+     
+    </SpeedDial>
+      <NotesAddDialogComponent isRemainder={isRemainder} isDialogOpen={isAddNotesOpen} openDialog={openAddNotesDialog} />
+      <NavBarForSmallScreens isDialogOpen={isDialogOpen} openDialog={openDialog} />
+      
       <h1 className='title' >{pageTitle}</h1>
       <IconButton id='menu' onClick={() => openDialog(true)} aria-label="delete" >
 

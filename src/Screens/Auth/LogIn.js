@@ -33,8 +33,6 @@ const LogIn = () => {
     const [email,updateEmail]=useState('');
     const [password,updatePassword]=useState(null);
     const [loading,setLoading]=useState(false);
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('sm'));
   
     const navigate=useNavigate();
 
@@ -100,10 +98,10 @@ const LogIn = () => {
                 
                
                 <br />
-                <TextField size= {matches ? 'small':'medium'} fullWidth={true}  onChange={handelEmailChange} label={'Email'} inputMode='email'  />
+                <TextField  fullWidth={true}  onChange={handelEmailChange} label={'Email'} inputMode='email'  />
                 <br />
                 <br />
-                <TextField size= {matches ? 'small':'medium'} fullWidth={true} type='password' onChange={handelPasswordChange} label={'Password'}  />
+                <TextField  fullWidth={true} type='password' onChange={handelPasswordChange} label={'Password'}  />
 
             </CardContent>
             <CardActions  >
