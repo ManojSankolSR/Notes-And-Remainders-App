@@ -19,6 +19,7 @@ import { auth } from './Firebase/firebase.js';
 import SignUp from './Screens/Auth/SignUp.js';
 import { Notes as AlterNotes } from './Functions/Notes.js';
 import { Remainders as AlterRemainders } from './Functions/Remainders.js';
+import SearchScreen from './Screens/SearchScreen.js';
 
 
 
@@ -99,6 +100,11 @@ function App() {
     {
       path: '/',
       element: <div className='MainDiv'><Navbar isRemainder={true} /> <HomeScreen /> </div>
+    },
+    {
+      path: '/Search',
+      element: <div className='MainDiv'><Navbar isRemainder={false} /> <SearchScreen /> </div>
+
     },
     {
       path: '/Notes',

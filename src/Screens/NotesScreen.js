@@ -13,6 +13,8 @@ import NotesAndRemaindersUpdateDialog from './components/Dialogs/NotesAndRemaind
 import randomColor from 'randomcolor';
 import { Masonry } from '@mui/lab';
 import { mirage } from 'ldrs'
+import { NavLink } from 'react-router-dom';
+import { RiSearch2Line } from 'react-icons/ri';
 
 
 mirage.register()
@@ -39,7 +41,13 @@ const NotesScreen = () => {
 
   return (
     <div className='BodyDiv'>
-      <TopBar pageTitle={'Notes'} />
+      <TopBar pageTitle={'Notes'} SearchComponent={
+        <NavLink className='SearchBar' to={'/Search'}>
+        <RiSearch2Line />
+          &nbsp;
+          Search
+        </NavLink>
+      } />
       {/* <div className="componentsDiv" > */}
       
       <Paper  elevation={2} className='componentsDiv'  sx={{backgroundColor:'#F6F8FA',borderRadius:5,padding:2,marginX:1,marginY:2}} >

@@ -11,6 +11,8 @@ import Dialog from '@mui/material/Dialog';
 import { Masonry, TabContext, TabList, TabPanel } from '@mui/lab';
 import { Tab,Paper,useMediaQuery, } from '@mui/material';
 import { useTheme } from '@emotion/react';
+import { NavLink } from 'react-router-dom';
+import { RiSearch2Line } from 'react-icons/ri';
 
 
 
@@ -33,7 +35,13 @@ const HomeScreen = () => {
   return (
 
     <div className='BodyDiv'>
-      <TopBar pageTitle={'Recent'} />
+      <TopBar pageTitle={'Recent'} SearchComponent={
+        <NavLink className='SearchBar' to={'/Search'}>
+        <RiSearch2Line />
+          &nbsp;
+          Search
+        </NavLink>
+      } />
       {/* <div className="HomeDiv"  > */}
       <Paper  elevation={2} className='componentsDiv'  sx={{backgroundColor:'#F6F8FA',borderRadius:5,padding:2,marginX:1,marginY:2}} >
      

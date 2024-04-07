@@ -22,7 +22,7 @@ import NotesAddDialogComponent from '../Dialogs/NotesAddDialogComponent';
 
 
 
-const TopBar = ({ pageTitle }) => {
+const TopBar = ({ pageTitle,SearchComponent }) => {
   const user = useContext(AuthContext);
   const navigate=useNavigate();
   const theme = useTheme();
@@ -89,11 +89,12 @@ const TopBar = ({ pageTitle }) => {
 
         <IoMenu />
       </IconButton>
-      <div className='SearchBar'>
-        <RiSearch2Line />
-        &nbsp;
-        Search
-      </div>
+       {
+         SearchComponent
+       }
+      
+       
+      {/* </div> */}
       <div className="userinfo">
         <div className='username' >
         {user.displayName}

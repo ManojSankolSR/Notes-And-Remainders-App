@@ -8,6 +8,8 @@ import { LoadingContext, RemaindersContext } from '../Contexts/Contexts';
 import NotesAndRemaindersUpdateDialog from './components/Dialogs/NotesAndRemaindersUpdateDialog';
 import { Masonry } from '@mui/lab';
 import { mirage } from 'ldrs'
+import { RiSearch2Line } from 'react-icons/ri';
+import { NavLink } from 'react-router-dom';
 
 mirage.register()
 
@@ -25,7 +27,13 @@ const RemaindersScreen = () => {
 
 
     <div className='BodyDiv'>
-      <TopBar pageTitle={'Remainders'} />
+      <TopBar pageTitle={'Remainders'} SearchComponent={
+        <NavLink className='SearchBar' to={'/Search'}>
+        <RiSearch2Line />
+          &nbsp;
+          Search
+        </NavLink>
+      } /> 
       {/* <div className="componentsDiv"> */}
       <Paper  elevation={2} className='componentsDiv'   sx={{backgroundColor:'#F6F8FA',borderRadius:5,padding:2,marginX:1,marginY:2}} >
         {

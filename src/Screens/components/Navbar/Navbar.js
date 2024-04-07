@@ -12,6 +12,7 @@ import { Toaster, toast } from 'sonner';
 
 import NotesAddDialogComponent from '../Dialogs/NotesAddDialogComponent';
 import { signOut } from 'firebase/auth';
+import { RiSearch2Line } from 'react-icons/ri';
 
 
 
@@ -42,6 +43,7 @@ const Navbar = ({ isRemainder }) => {
             <Navbaritem icon={<GrHomeRounded />} title={'Home'} href={'/'} />
             <Navbaritem icon={<FaRegNoteSticky />} title={'Notes'} href={'/Notes'} />
             <Navbaritem icon={<LuAlarmClock />} title={'Remainder'} href={'/Remainders'} />
+            <Navbaritem icon={<RiSearch2Line />} title={'Search'} href={'/Search'} />
             <Navbaritem icon={<LuLogOut />} title={'Logout'} href={'/logout'} onclick={ async ()=> await signOut()} />
 
 

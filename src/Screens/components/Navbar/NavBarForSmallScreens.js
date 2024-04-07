@@ -6,6 +6,7 @@ import { GrHomeRounded } from 'react-icons/gr';
 import { FaRegNoteSticky } from 'react-icons/fa6';
 import { IoClose } from "react-icons/io5";
 import { LuAlarmClock, LuLogOut } from 'react-icons/lu';
+import { RiSearch2Line } from 'react-icons/ri';
 
 
 const Navbaritem = ({ icon, title, href, onclick }) => {
@@ -29,11 +30,13 @@ const NavBarForSmallScreens = ({openDialog,isDialogOpen}) => {
         </IconButton>
          
     </DialogTitle>
-    <DialogContent sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'space-evenly',height:230}}> 
+    <DialogContent sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'space-evenly',height:260}}> 
             <Navbaritem icon={<GrHomeRounded />} title={'Home'} href={'/'} />
             <Navbaritem icon={<FaRegNoteSticky />} title={'Notes'} href={'/Notes'} />
             <Navbaritem icon={<LuAlarmClock />} title={'Remainder'} href={'/Remainders'} />
+            <Navbaritem icon={<RiSearch2Line />} title={'Search'} href={'/Search'} />
             <Navbaritem icon={<LuLogOut />} title={'Logout'} href={'/logout'} />
+            
     </DialogContent>
     <DialogActions>
  
