@@ -35,7 +35,6 @@ const NavBarForSmallScreens = ({openDialog,isDialogOpen}) => {
             <Navbaritem icon={<FaRegNoteSticky />} title={'Notes'} href={'/Notes'} />
             <Navbaritem icon={<LuAlarmClock />} title={'Remainder'} href={'/Remainders'} />
             <Navbaritem icon={<RiSearch2Line />} title={'Search'} href={'/Search'} />
-            <Navbaritem icon={<LuLogOut />} title={'Logout'} href={'/logout'} />
             
     </DialogContent>
     <DialogActions>
