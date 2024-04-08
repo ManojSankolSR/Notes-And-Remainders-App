@@ -17,9 +17,9 @@ export class Notes{
     }
     static getNotes= async (uid,setNotes,setLoading)=>{
         const data=await getDocs(collection(db,'Users',uid,'Notes'));
-        console.log(data);
+       
         const Notes=[];
-        console.log(data.size);
+      
         for (const Note of data.docs) {
             
             Notes.push(Note.data());

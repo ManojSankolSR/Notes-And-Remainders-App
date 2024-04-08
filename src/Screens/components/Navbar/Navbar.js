@@ -44,7 +44,7 @@ const Navbar = ({ isRemainder }) => {
             <Navbaritem icon={<FaRegNoteSticky />} title={'Notes'} href={'/Notes'} />
             <Navbaritem icon={<LuAlarmClock />} title={'Remainder'} href={'/Remainders'} />
             <Navbaritem icon={<RiSearch2Line />} title={'Search'} href={'/Search'} />
-            <Navbaritem icon={<LuLogOut />} title={'Logout'} href={'/logout'} onclick={ async ()=> await signOut()} />
+         
 
 
             <div style={{
