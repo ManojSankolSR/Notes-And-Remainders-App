@@ -4,7 +4,7 @@ import { GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, sig
 import { auth } from '../../Firebase/firebase';
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'sonner';
+import { toast } from 'react-hot-toast';
 import { useTheme } from '@emotion/react';
 
 
@@ -30,7 +30,7 @@ const CustomButton=({onclick,varient,icon,label,loading,fullWidth,disabled})=>{
 const LogIn = () => {
 
     const [email,updateEmail]=useState('');
-    const [password,updatePassword]=useState(null);
+    const [password,updatePassword]=useState('');
     const [loading,setLoading]=useState(false);
   
     const navigate=useNavigate();
@@ -41,7 +41,7 @@ const LogIn = () => {
             await signInWithPopup(auth,provider);
         }catch(e){
             console.log(e);
-            toast(e);
+            toast.error(e);
         }
     }
   
@@ -62,11 +62,24 @@ const LogIn = () => {
 
     }
     const handelSignIn= async ()=>{
+        
         setLoading(true);
         try{
+            if(email==='' ){
+                throw new Error('Please Enter Email');
+                
+            }
+            if (!email.includes('.com') || !email.includes('@')) {
+                throw new Error('Please Enter Valid Email');
+
+            }
+            if(password===''){
+                throw new Error('Please Enter Password');
+             
+            }
             await signInWithEmailAndPassword(auth,email,password);
         }catch(e){
-            toast(e);
+            toast.error(e.message);
 
         }finally{
             setLoading(false);
@@ -84,7 +97,7 @@ const LogIn = () => {
         alignItems:'center'
     }} >
         
-        <Paper elevation={5}  className='signupandsigninDiv' >
+        <Paper elevation={10} sx={{padding:2}}   className='signupandsigninDiv' >
           
                
             

@@ -163,9 +163,15 @@
    
 
     
+
 }
+
+
+
 .signupandsigninDiv{
     padding: 10px 15px;
+    align-self: center;
+    justify-self: center;
     width: 350px;
 }
 
@@ -216,6 +222,9 @@
     .signupandsigninDiv{
         margin: 0px 30px;
    
+    }
+    .signinandupScreenTopBar{
+        font-size: 15px;
     }
 
 }

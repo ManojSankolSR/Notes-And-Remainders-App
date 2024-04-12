@@ -27,7 +27,7 @@ const TopBar = ({ pageTitle,SearchComponent }) => {
   const navigate=useNavigate();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('xs'));
-  console.log(user);
+
   const handleSignOut = async () => {
     await signOut(auth);
     navigate('/');

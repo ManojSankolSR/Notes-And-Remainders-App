@@ -9,7 +9,7 @@ import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-d
 import { NotesContext, RemaindersContext, AuthContext,LoadingContext } from './Contexts/Contexts.js'
 import { useContext, useMemo, useState, } from "react";
 import useLocalStorage from "use-local-storage";
-import { Toaster } from 'sonner';
+import { Toaster } from 'react-hot-toast';
 import LogIn from './Screens/Auth/LogIn.js';
 import { Backdrop, CircularProgress, createTheme, ThemeProvider, LinearProgress } from '@mui/material';
 import { blue, grey, purple, } from '@mui/material/colors';
@@ -122,7 +122,7 @@ function App() {
       <RemaindersContext.Provider value={{ Remainders, alterRemainders }}>
         <NotesContext.Provider value={{ Notes, alterNotes }}>
         <LoadingContext.Provider value={loading} >
-        <Toaster />
+          <Toaster />
           
           <RouterProvider router={user != null ? Authenticatedrouter : router} />
           

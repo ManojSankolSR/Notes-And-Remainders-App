@@ -2,7 +2,8 @@ import { collection, deleteDoc, doc, getDocs, setDoc, updateDoc } from 'firebase
 import React from 'react'
 import { db } from '../Firebase/firebase';
 import axios from 'axios';
-import { toast } from 'sonner';
+import { toast } from 'react-hot-toast';
+import moment from 'moment';
 
 export class Remainders {
     static addRemainder = async (user, Remainder) => {
@@ -11,6 +12,7 @@ export class Remainders {
             email: user.email,
             rem: JSON.stringify(Remainder),
         }));
+        toast.success(`Remainder Scheduled At ${moment(Remainder.remainderDate).format('D-MMM-yy  hh:mm a')}`);
 
 
 
@@ -27,7 +29,9 @@ export class Remainders {
                 id: id,
             }));
             if(res.data.canceled===true){
-                toast('Scheduled Remainder Has Been Canceled');
+                toast('Scheduled Remainder Has Been Canceled',{
+                    icon:'⚠️'
+                });
 
             }
         

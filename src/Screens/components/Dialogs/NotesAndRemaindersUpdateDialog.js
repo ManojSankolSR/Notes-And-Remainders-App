@@ -4,7 +4,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } 
 import { LocalizationProvider, DateTimePicker,MobileDateTimePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 import { enIN } from 'date-fns/locale';
-import { toast } from 'sonner';
+import { toast } from 'react-hot-toast';
 import { Notes } from '../../../Functions/Notes';
 import { Remainders } from '../../../Functions/Remainders';
 
@@ -28,10 +28,10 @@ const NotesAndRemaindersUpdateDialog = ({ isRemainder, isDialogOpen, openDialog,
     }
     const handleNotesUpdate = async () => {
         if(title===''){
-            return toast('Enter Some Value In Title');
+            return toast.error('Please Enter Some Value In Title');
         }
         if(desc===''){
-            return toast('Enter Some Value In Note');
+            return toast.error('Please Enter Some Value In Note');
         }
         const newNotes = notesContext.Notes;
         const index = newNotes.indexOf(note);
@@ -44,10 +44,10 @@ const NotesAndRemaindersUpdateDialog = ({ isRemainder, isDialogOpen, openDialog,
     }
     const handleRemaindersUpdate = () => {
         if(title===''){
-            return toast('Enter Some Value In Title');
+            return toast.error('Please Enter Some Value In Title');
         }
         if(desc===''){
-            return toast('Enter Some Value In Note');
+            return toast.error('Please Enter Some Value In Note');
         }
         const newRemainders = remaindersContext.Remainders;
         const index = newRemainders.indexOf(note);

@@ -8,7 +8,6 @@ import { LuLogOut } from "react-icons/lu";
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
-import { Toaster, toast } from 'sonner';
 
 import NotesAddDialogComponent from '../Dialogs/NotesAddDialogComponent';
 import { signOut } from 'firebase/auth';

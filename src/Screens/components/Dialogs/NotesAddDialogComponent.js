@@ -4,7 +4,7 @@ import {DateTimePicker,LocalizationProvider,MobileDateTimePicker} from '@mui/x-d
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
 import { NotesContext,RemaindersContext,AuthContext} from '../../../Contexts/Contexts';
 import {v4 as uuidv4} from 'uuid'
-import { toast } from 'sonner';
+import { toast } from 'react-hot-toast';
 import randomColor from 'randomcolor';
 import { BsSave2 } from 'react-icons/bs';
 import { enIN } from 'date-fns/locale';
@@ -56,10 +56,10 @@ const NotesAddDialogComponent = ({isRemainder,isDialogOpen,openDialog}) => {
   }}  >Cancel</Button>
   <Button  onClick={ async ()=>{
     if(inputTitleRef.current.value===''){
-        return toast('Enter Some Value In Title');
+        return toast.error('Please Enter Some Value In Title');
     }
     if(inputDescriptionRef.current.value===''){
-        return toast('Enter Some Value In Note');
+        return toast.error('Please Enter Some Value In Note');
     }
     if(isRemainder){
         const id=uuidv4();
